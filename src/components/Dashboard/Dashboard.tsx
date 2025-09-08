@@ -76,7 +76,7 @@ const Dashboard: React.FC = () => {
     return matchesSearch && matchesCategory;
   });
 
-  const categories = Array.from(new Set(notes.map(note => note.category).filter(Boolean)));
+  const categories = Array.from(new Set(notes.map(note => note.category).filter((category): category is string => Boolean(category))));
 
   if (loading) {
     return (
